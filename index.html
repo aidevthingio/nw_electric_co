@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>electricsolutionsnw</title>
+  <title>Secret AI Page</title>
   <style>
     html, body {
       margin: 0;
@@ -19,16 +19,23 @@
 
     #protected-content {
       display: none;
+      flex-direction: column;
       height: 100vh;
       width: 100vw;
-      display: flex;
-      flex-direction: column;
     }
 
     .header {
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 1rem;
       background: #111;
+    }
+
+    .header img {
+      max-width: 80%;
+      height: auto;
+      margin-bottom: 0.5rem;
     }
 
     elevenlabs-convai {
@@ -41,8 +48,8 @@
 <body>
   <div id="protected-content">
     <div class="header">
-      <h1>🤫 Welcome to My Secret AI Page</h1>
-      <p>Full-screen ElevenLabs convo widget below 👇</p>
+      <img src="https://www.electricsolutionsnw.com/wp-content/uploads/2024/07/FINAL_Electric-Solutions-NW-LLC-Logo-1.svg" alt="Electric Solutions NW Logo" />
+      <h1>Welcome to Electric Solutions NW AI Assistant</h1>
     </div>
   </div>
 
@@ -53,16 +60,13 @@
       throw new Error("Unauthorized");
     }
 
-    // Show content container
     const content = document.getElementById('protected-content');
     content.style.display = 'flex';
 
-    // Create ElevenLabs element
     const widget = document.createElement('elevenlabs-convai');
     widget.setAttribute('agent-id', 'agent_01jyytp739ek8smm9k54c0dcq5');
     content.appendChild(widget);
 
-    // Load widget script
     const script = document.createElement('script');
     script.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
     script.async = true;
